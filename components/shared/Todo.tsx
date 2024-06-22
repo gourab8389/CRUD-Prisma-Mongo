@@ -1,7 +1,22 @@
-const Todo = () => {
+// interface TodoProps {
+//     todo: string
+// }
+
+import ChangeTodo from "./ChangeTodo"
+
+const Todo = ({todo}) => {
+
+    const todoStyle = {
+        textDecoration: todo.isCompleted === true ? "line-through" : "none",
+        opacity: todo.isCompleted === true ? 0.5 : 1,
+    }
+
   return (
-    <div>
-      todo
+    <div className="w-full flex items-center justify-center bg-white py-3 px-40 rounded-2xl gap-2"  style={todoStyle} >
+        <ChangeTodo todo={todo}/>
+      <span className="text-center font-bold uppercase">
+        {todo.title}
+      </span>
     </div>
   )
 }

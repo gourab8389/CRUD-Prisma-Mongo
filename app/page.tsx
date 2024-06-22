@@ -28,13 +28,13 @@ export default async function Home() {
         CRUD {" "}
         <span className="text-orange-700">Prisma-MongoDb</span>
       </h1>
-      <div className="flex justify-center flex-col items-center w-[1000px]">
+      <div className="flex justify-center flex-col items-center w-[1000px] px-8 rounded-xl">
       <AddTodo/>
-      <div className="flex flex-col gap-5 items-center justify-center mb-10 w-full ">
+      <div className="flex flex-col gap-5 items-center justify-center mb-10 px-8 ">
         {data.map((todo, id)=>(
-          <div className="w-full 
+          <div className="flex w-full px-8 mt-3 
           " key={id}>
-            <Todo/>
+            <Todo todo={todo}/>
           </div>
         ))}
       </div>
