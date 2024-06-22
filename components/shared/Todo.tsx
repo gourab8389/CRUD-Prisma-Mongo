@@ -1,10 +1,11 @@
-// interface TodoProps {
-//     todo: string
-// }
 
+
+import { todoType } from "@/types/todoTypes"
 import ChangeTodo from "./ChangeTodo"
+import EditTodo from "./EditTodo"
+import DeleteTodo from "./DeleteTodo"
 
-const Todo = ({todo}) => {
+const Todo = ({todo}: {todo: todoType}) => {
 
     const todoStyle = {
         textDecoration: todo.isCompleted === true ? "line-through" : "none",
@@ -17,6 +18,10 @@ const Todo = ({todo}) => {
       <span className="text-center font-bold uppercase">
         {todo.title}
       </span>
+      <div className="flex items-center gap-5">
+        <EditTodo todo={todo} />
+        <DeleteTodo todo={todo} />
+      </div>
     </div>
   )
 }
